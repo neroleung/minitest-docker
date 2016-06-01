@@ -24,6 +24,7 @@ module Minitest
           test_name = result.name.gsub(/[^a-zA-Z0-9_.-]/, '_')
 
           tag = test_name + container_name
+          puts tag
           container.commit.tag(repo: tag, force: true)
 
           @containers[result.name] ||= []
